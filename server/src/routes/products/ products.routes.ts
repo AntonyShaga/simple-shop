@@ -7,7 +7,7 @@ import type {
     PizzaSku,
     PizzaDetailsResponse,
     PizzaTypeApi, PizzaOfDayRow
-} from "@shared/index.js";
+} from "@simple-shop/shared";
 import {getPaginationParams} from "@/utils/pagination.js";
 
 export const productsRouter = Router();

@@ -1,14 +1,14 @@
 import {Router} from "express";
 import {pool} from "@/db.js";
 import crypto from "crypto";
-import type {PizzaPriceRow} from "@shared/types/product.js";
 import type {
     CreateOrderRequest,
     CreateOrderResponse, OrderByIdResponse,
     OrderDetailRow, OrderJoinRow,
     OrderRow,
-    OrdersResponse
-} from "@shared/types/order.js";
+    OrdersResponse,
+    PizzaPriceRow
+} from "@simple-shop/shared";
 import {CreateOrderSchema} from "@shared/schemas/order.js";
 import {getPaginationParams} from "@/utils/pagination.js";
 
