@@ -5,7 +5,8 @@ export type {
     PizzaDetailsResponse,
     PizzaSku,
     PizzaTypeApi,
-    PizzaOfDayRow
+    PizzaOfDayRow,
+    PizzaPriceRow
 } from './types/product.js';
 
 export type {
