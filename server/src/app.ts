@@ -3,7 +3,7 @@ import express from "express";
 import cors from "cors";
 import {productsRouter} from "./routes/products/ products.routes.js";
 import path from 'path';
-import {ordersRouter} from "@/routes/orders/orders.routes.js";
+import {ordersRouter} from "./routes/orders/orders.routes.js";
 
 
 const app = express();

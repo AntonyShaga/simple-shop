@@ -1,5 +1,5 @@
 import {Router} from "express";
-import {pool} from "@/db.js";
+import {pool} from "../../db.js";
 import crypto from "crypto";
 import type {
     CreateOrderRequest,
@@ -10,7 +10,7 @@ import type {
     PizzaPriceRow
 } from "@simple-shop/shared";
 import {CreateOrderSchema} from "@simple-shop/shared/schemas/order.js";
-import {getPaginationParams} from "@/utils/pagination.js";
+import {getPaginationParams} from "../../utils/pagination.js";
 
 export const ordersRouter = Router();
 

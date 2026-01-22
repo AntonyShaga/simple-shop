@@ -1,5 +1,5 @@
 import {Router} from "express";
-import {pool} from "@/db.js";
+import {pool} from "../../db.js";
 import type {
     ErrorResponse,
     PizzaType,
@@ -8,7 +8,7 @@ import type {
     PizzaDetailsResponse,
     PizzaTypeApi, PizzaOfDayRow
 } from "@simple-shop/shared";
-import {getPaginationParams} from "@/utils/pagination.js";
+import {getPaginationParams} from "../../utils/pagination.js";
 
 export const productsRouter = Router();
 
