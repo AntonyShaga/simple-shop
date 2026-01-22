@@ -9,7 +9,7 @@ import type {
     OrdersResponse,
     PizzaPriceRow
 } from "@simple-shop/shared";
-import {CreateOrderSchema} from "@shared/schemas/order.js";
+import {CreateOrderSchema} from "@simple-shop/shared/schemas/order.js";
 import {getPaginationParams} from "@/utils/pagination.js";
 
 export const ordersRouter = Router();
