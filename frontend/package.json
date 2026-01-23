@@ -16,7 +16,8 @@
     "@tanstack/react-router": "^1.144.0",
     "@tanstack/react-router-devtools": "^1.144.0",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "@simple-shop/shared": "file:../shared"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
@@ -40,6 +41,5 @@
     "vite": "^7.2.4",
     "vitest": "^4.0.16",
     "vitest-fetch-mock": "^0.4.5",
-    "@simple-shop/shared": "file:../shared"
   }
 }
