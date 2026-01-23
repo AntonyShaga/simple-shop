@@ -20,3 +20,5 @@ export type {
 } from './types/order.js';
 
 export type {CreateOrderInput} from './schemas/order.js'
+
+export {CreateOrderSchema} from './schemas/order.js';
