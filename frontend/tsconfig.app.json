@@ -7,7 +7,11 @@
     "module": "ESNext",
     "types": ["vite/client"],
     "skipLibCheck": true,
-
+    "baseUrl": ".",
+    "paths": {
+      "@simple-shop/shared": ["../shared"],
+      "@simple-shop/shared/*": ["../shared/*"]
+    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",
