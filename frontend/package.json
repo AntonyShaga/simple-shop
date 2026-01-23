@@ -3,11 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "workspaces": [
-    "frontend",
-    "server",
-    "shared"
-  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -16,7 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@simple-shop/shared": "*",
+    "@simple-shop/shared": "file:../shared",
     "@tanstack/react-query": "^5.90.14",
     "@tanstack/react-query-devtools": "^5.91.2",
     "@tanstack/react-router": "^1.144.0",

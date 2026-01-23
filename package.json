@@ -1,13 +1,11 @@
 {
   "private": true,
   "workspaces": [
-    "frontend",
     "server",
     "shared"
   ],
   "scripts": {
-    "build": "npm run build -w shared && npm run build -w frontend",
-    "build:server": "npm run build -w shared && npm run build -w server",
+    "build": "npm run build -w shared && npm run build -w server",
     "start": "npm run start -w server"
   }
 }
