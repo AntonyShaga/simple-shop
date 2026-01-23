@@ -1,5 +1,5 @@
 import { useCart } from './model/use-cart.ts';
-import type { PizzaDetailsResponse } from '../../../../shared';
+import type { PizzaDetailsResponse } from '@simple-shop/shared';
 
 export function useAddToCart() {
   const { setCart } = useCart();

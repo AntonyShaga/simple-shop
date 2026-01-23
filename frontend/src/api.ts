@@ -6,7 +6,7 @@ import type {
   OrdersResponse,
   PizzaDetailsResponse,
   PizzaTypesResponse,
-} from '../../shared';
+} from '@simple-shop/shared';
 import { API_URL } from './shared/config.ts';
 
 export async function fetchProducts(page: number): Promise<PizzaTypesResponse> {

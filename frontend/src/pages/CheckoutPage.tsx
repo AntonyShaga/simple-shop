@@ -2,7 +2,7 @@ import { API_URL } from '../shared/config.ts';
 import { Link, useNavigate } from '@tanstack/react-router';
 import { ROUTES } from '../shared/routes.ts';
 import { createOrder } from '../api.ts';
-import { CreateOrderSchema } from '../../../shared/schemas/order.ts';
+import { CreateOrderSchema } from '@simple-shop/shared';
 import React from 'react';
 import { useCart } from '../entities/cart';
 
