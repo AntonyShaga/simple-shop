@@ -3,24 +3,16 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "target": "ESNext",
-    "rootDir": "..",
+    "rootDir": "src",
     "outDir": "dist",
     "types": [
       "node"
     ],
     "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
-    "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
     "strict": true,
-    "isolatedModules": true,
-    "verbatimModuleSyntax": true,
-    "moduleDetection": "force",
     "skipLibCheck": true
   },
   "include": [
-    "src",
-    "../shared"
+    "src"
   ]
 }
