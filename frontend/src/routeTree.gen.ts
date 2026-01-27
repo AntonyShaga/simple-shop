@@ -63,9 +63,9 @@ export interface FileRoutesByFullPath {
   '/cart': typeof CartLazyRoute
   '/orders/$id': typeof OrdersIdLazyRoute
   '/products/$id': typeof ProductsIdLazyRoute
-  '/orders': typeof OrdersIndexRoute
-  '/products': typeof ProductsIndexRoute
-  '/checkout': typeof CheckoutIndexLazyRoute
+  '/orders/': typeof OrdersIndexRoute
+  '/products/': typeof ProductsIndexRoute
+  '/checkout/': typeof CheckoutIndexLazyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -93,9 +93,9 @@ export interface FileRouteTypes {
     | '/cart'
     | '/orders/$id'
     | '/products/$id'
-    | '/orders'
-    | '/products'
-    | '/checkout'
+    | '/orders/'
+    | '/products/'
+    | '/checkout/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -145,21 +145,21 @@ declare module '@tanstack/react-router' {
     '/checkout/': {
       id: '/checkout/'
       path: '/checkout'
-      fullPath: '/checkout'
+      fullPath: '/checkout/'
       preLoaderRoute: typeof CheckoutIndexLazyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/products/': {
       id: '/products/'
       path: '/products'
-      fullPath: '/products'
+      fullPath: '/products/'
       preLoaderRoute: typeof ProductsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/orders/': {
       id: '/orders/'
       path: '/orders'
-      fullPath: '/orders'
+      fullPath: '/orders/'
       preLoaderRoute: typeof OrdersIndexRouteImport
       parentRoute: typeof rootRouteImport
     }

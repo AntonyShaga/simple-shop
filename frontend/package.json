@@ -11,7 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@simple-shop/shared": "file:../shared",
+    "@simple-shop/shared": "*",
     "@tanstack/react-query": "^5.90.14",
     "@tanstack/react-query-devtools": "^5.91.2",
     "@tanstack/react-router": "^1.144.0",
