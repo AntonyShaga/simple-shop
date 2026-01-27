@@ -8,6 +8,9 @@
     "types": ["vite/client"],
     "skipLibCheck": true,
     "baseUrl": ".",
+    "paths": {
+      "@simple-shop/shared": ["../shared/dist"]
+    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",
