@@ -7,9 +7,8 @@ import React from 'react';
 import { useCart } from '../entities/cart';
 
 function CheckoutPage() {
-  const { cart, setCart } = useCart();
+  const { selectedItems, setCart } = useCart();
   const navigate = useNavigate();
-  const selectedItems = cart.filter((item) => item.selected);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

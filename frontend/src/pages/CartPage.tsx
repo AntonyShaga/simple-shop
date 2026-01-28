@@ -9,9 +9,7 @@ const intl = new Intl.NumberFormat('en-US', {
 });
 
 function CartPage() {
-  const { cart, setCart, totalPrice } = useCart();
-
-  const selectedCount = cart.filter((item) => item.selected).length;
+  const { cart, setCart, totalPrice, selectedItems } = useCart();
 
   const grouped = cart.reduce<Record<string, typeof cart>>((acc, item) => {
     if (!acc[item.pizza_type_id]) acc[item.pizza_type_id] = [];
@@ -162,7 +160,7 @@ function CartPage() {
               </p>
 
               <Link to={ROUTES.checkout}>
-                <button type="button" aria-label="Proceed to checkout" disabled={selectedCount === 0}>
+                <button type="button" aria-label="Proceed to checkout" disabled={selectedItems.length === 0}>
                   Checkout
                 </button>
               </Link>
