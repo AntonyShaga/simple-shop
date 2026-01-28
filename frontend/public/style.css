@@ -116,6 +116,19 @@ h2.no-flag::after {
     display: none;
 }
 
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 /*-----------//------------//HEADER//-----------//-----------*/
 .nav-cart {
     position: relative;
@@ -885,12 +898,18 @@ h2.no-flag::after {
 }
 
 .featured-media {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 100%;
     margin: 0;
+    padding: 6px 4px;
 }
+
 
 .featured-image {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    max-height: 400px;
     object-fit: cover;
     border-radius: 20px;
     display: block;
@@ -898,7 +917,21 @@ h2.no-flag::after {
     box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
 }
 
+.featured-media button {
+    margin-top: auto;
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 14px;
+
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
 .featured-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     min-width: 0;
     padding: 6px 4px;
 }

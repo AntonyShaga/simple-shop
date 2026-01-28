@@ -41,9 +41,8 @@ function Index() {
 
   const addToCart = useAddToCart();
 
-  const handleAddToCart = (id: string) => {
+  const handleAddToCart = () => {
     if (!data || !effectiveSelectedId) return;
-    setSelectedId(id);
     addToCart(data, effectiveSelectedId, {
       replaceItemId: isEditMode ? cartItemId : undefined,
     });
@@ -66,6 +65,9 @@ function Index() {
         <div className="featured-layout">
           <figure className="featured-media">
             <img className="featured-image" src={`${API_URL}${data.image}`} alt={data.name} loading="eager" />
+            <button type="button" onClick={handleAddToCart}>
+              Add to cart
+            </button>
           </figure>
 
           <div className="featured-details" aria-label="Pizza details">
@@ -94,9 +96,9 @@ function Index() {
                       className="variant-add"
                       aria-label={`Size ${item.size}, price ${item.price} dollars`}
                       aria-pressed={effectiveSelectedId === item.pizza_id}
-                      onClick={() => handleAddToCart(item.pizza_id)}
+                      onClick={() => setSelectedId(item.pizza_id)}
                     >
-                      Add
+                      {item.size}
                     </button>
                   </li>
                 ))}
