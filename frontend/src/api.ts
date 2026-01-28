@@ -48,7 +48,7 @@ export async function fetchPizzaOfTheDay(): Promise<PizzaDetailsResponse> {
 }
 
 export async function createOrder(payload: CreateOrderRequest): Promise<CreateOrderResponse> {
-  const res = await fetch('http://localhost:3000/orders', {
+  const res = await fetch(`${API_URL}/orders`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
