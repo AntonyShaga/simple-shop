@@ -3,6 +3,7 @@ import { ROUTES } from '../shared/routes.ts';
 import { useQuery } from '@tanstack/react-query';
 import { fetchOrder } from '../api.ts';
 import { API_URL } from '../shared/config.ts';
+import { formatDateTime } from '../shared/formatDateTime.ts';
 
 function OrderPage() {
   const { id } = useParams({ from: ROUTES.order });
@@ -29,7 +30,7 @@ function OrderPage() {
           <section className="order-stats">
             <div className="order-stat">
               <span className="order-stat-label">Created</span>
-              <strong>{data.created_at}</strong>
+              <strong>{formatDateTime(data.created_at)}</strong>
             </div>
 
             <div className={`order-stat order-stat--${data.status.toLowerCase()}`}>
