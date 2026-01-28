@@ -3,6 +3,7 @@ import { fetchOrders } from '../api.ts';
 import { Link } from '@tanstack/react-router';
 import { ROUTES } from '../shared/routes.ts';
 import Loader from './Loader.tsx';
+import { formatDateTime } from '../shared/formatDateTime.ts';
 
 type Props = {
   page: number;
@@ -30,7 +31,7 @@ function OrdersPage({ page }: Props) {
                   <Link className="card-order" to={ROUTES.order} params={{ id: order.id }}>
                     <p>{order.status}</p>
                     <p>{order.total_amount}</p>
-                    <p>{order.created_at}</p>
+                    <p>{formatDateTime(order.created_at)}</p>
                   </Link>
                 </article>
               </li>
