@@ -5,13 +5,14 @@ import { API_URL } from '../shared/config.ts';
 import { useAddToCart } from '../entities/cart/useAddToCart.ts';
 import { ROUTES } from '../shared/routes.ts';
 import { useState } from 'react';
+import Loader from '../pages/Loader.tsx';
 
 export const Route = createFileRoute('/')({
   component: Index,
 });
 
 function Index() {
-  const { data, isLoading, isFetching, error } = useQuery({
+  const { data, isLoading, error } = useQuery({
     queryKey: ['pizza-of-the-day'],
     queryFn: fetchPizzaOfTheDay,
     staleTime: 1000 * 60 * 60 * 24,
@@ -48,7 +49,10 @@ function Index() {
     });
   };
 
-  if (isLoading || isFetching) return <div role="status">Loading...</div>;
+  if (isLoading) {
+    return <Loader active={isLoading} />;
+  }
+
   if (error) return <div role="alert">Failed to load.</div>;
   if (!data) return <div role="alert">Not found.</div>;
 

@@ -1,15 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 
 type Props = {
-  isFetching: boolean;
+  active: boolean;
 };
 
-function Loader({ isFetching }: Props) {
+function Loader({ active }: Props) {
   const [isLoaderVisible, setIsLoaderVisible] = useState(false);
   const hideTimerRef = useRef<number | null>(null);
 
   useEffect(() => {
-    if (isFetching) {
+    if (active) {
       if (hideTimerRef.current) {
         clearTimeout(hideTimerRef.current);
         hideTimerRef.current = null;
@@ -30,7 +30,7 @@ function Loader({ isFetching }: Props) {
         hideTimerRef.current = null;
       }
     };
-  }, [isFetching]);
+  }, [active]);
 
   return (
     <>

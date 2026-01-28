@@ -37,7 +37,7 @@ function OrdersPage({ page }: Props) {
               </li>
             ))}
           </ul>
-          <Loader isFetching={isFetching} />
+          <Loader active={isFetching} />
         </div>
       </section>
       <nav className="pagination" aria-label="Orders pagination">

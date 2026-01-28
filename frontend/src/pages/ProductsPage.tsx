@@ -40,7 +40,7 @@ function ProductsPage({ page }: Props) {
             ))}
           </ul>
 
-          <Loader isFetching={isFetching} />
+          <Loader active={isFetching} />
         </div>
         <nav className="pagination" aria-label="Products pagination">
           <Link
