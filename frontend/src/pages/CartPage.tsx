@@ -2,11 +2,7 @@ import { useCart } from '../entities/cart';
 import { Link } from '@tanstack/react-router';
 import { ROUTES } from '../shared/routes.ts';
 import { API_URL } from '../shared/config.ts';
-
-const intl = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD',
-});
+import { currencyFormatters } from '../shared/currencyFormatters.ts';
 
 function CartPage() {
   const { cart, setCart, totalPrice, selectedItems } = useCart();
@@ -80,7 +76,7 @@ function CartPage() {
                                   </div>
                                   <div className="cart-item-body">
                                     <h3 id={`item-${item.pizza_id}-title`}>
-                                      {item.size} — {intl.format(item.price)}
+                                      {item.size} — {currencyFormatters.usd.format(item.price)}
                                     </h3>
 
                                     <div className="cart-item-actions">
@@ -135,7 +131,7 @@ function CartPage() {
                                     </div>
 
                                     <p className="cart-item-subtotal">
-                                      Subtotal: <strong>{intl.format(subtotal)}</strong>
+                                      Subtotal: <strong>{currencyFormatters.usd.format(subtotal)}</strong>
                                     </p>
                                   </div>
                                 </article>
@@ -156,7 +152,7 @@ function CartPage() {
               </h2>
 
               <p>
-                Total: <strong aria-live="polite">{intl.format(totalPrice)}</strong>
+                Total: <strong aria-live="polite">{currencyFormatters.usd.format(totalPrice)}</strong>
               </p>
 
               <Link to={ROUTES.checkout}>

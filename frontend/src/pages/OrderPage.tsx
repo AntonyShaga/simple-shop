@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import { fetchOrder } from '../api.ts';
 import { API_URL } from '../shared/config.ts';
 import { formatDateTime } from '../shared/formatDateTime.ts';
+import { currencyFormatters } from '../shared/currencyFormatters.ts';
 
 function OrderPage() {
   const { id } = useParams({ from: ROUTES.order });
@@ -40,7 +41,7 @@ function OrderPage() {
 
             <div className="order-stat">
               <span className="order-stat-label">Total</span>
-              <strong>${data.total_amount}</strong>
+              <strong>{currencyFormatters.usd.format(data.total_amount)}</strong>
             </div>
           </section>
         </section>
@@ -65,10 +66,7 @@ function OrderPage() {
                     </div>
 
                     <div className="order-item-price">
-                      <span>
-                        ${item.price} × {item.quantity}
-                      </span>
-                      <strong>${(item.price * item.quantity).toFixed(2)}</strong>
+                      <strong>{currencyFormatters.usd.format(item.price * item.quantity)}</strong>
                     </div>
                   </div>
                 </article>

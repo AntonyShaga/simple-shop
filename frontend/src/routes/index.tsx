@@ -6,6 +6,7 @@ import { useAddToCart } from '../entities/cart/useAddToCart.ts';
 import { ROUTES } from '../shared/routes.ts';
 import { useState } from 'react';
 import Loader from '../pages/Loader.tsx';
+import { currencyFormatters } from '../shared/currencyFormatters.ts';
 
 export const Route = createFileRoute('/')({
   component: Index,
@@ -93,7 +94,7 @@ function Index() {
                 {data.items.map((item) => (
                   <li key={item.pizza_id} className="variant-row">
                     <span className="variant-size">{item.size}</span>
-                    <span className="variant-price">${Number(item.price).toFixed(2)}</span>
+                    <span className="variant-price">{currencyFormatters.usd.format(Number(item.price))}</span>
 
                     <button
                       type="button"

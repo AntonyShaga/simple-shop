@@ -4,6 +4,7 @@ import { Link } from '@tanstack/react-router';
 import { ROUTES } from '../shared/routes.ts';
 import Loader from './Loader.tsx';
 import { formatDateTime } from '../shared/formatDateTime.ts';
+import { currencyFormatters } from '../shared/currencyFormatters.ts';
 
 type Props = {
   page: number;
@@ -30,7 +31,7 @@ function OrdersPage({ page }: Props) {
                 <article className="card" aria-label={`Order ${order.id}`}>
                   <Link className="card-order" to={ROUTES.order} params={{ id: order.id }}>
                     <p>{order.status}</p>
-                    <p>{order.total_amount}</p>
+                    <p>{currencyFormatters.usd.format(order.total_amount)}</p>
                     <p>{formatDateTime(order.created_at)}</p>
                   </Link>
                 </article>

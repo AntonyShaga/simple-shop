@@ -5,6 +5,7 @@ import { createOrder } from '../api.ts';
 import { CreateOrderSchema } from '@simple-shop/shared';
 import React from 'react';
 import { useCart } from '../entities/cart';
+import { currencyFormatters } from '../shared/currencyFormatters.ts';
 
 function CheckoutPage() {
   const { selectedItems, setCart } = useCart();
@@ -59,12 +60,8 @@ function CheckoutPage() {
                         <span>Size: {item.size}</span>
                         <span>Qty: {item.quantity}</span>
                       </div>
-
                       <div className="order-item-price">
-                        <span>
-                          ${item.price} × {item.quantity}
-                        </span>
-                        <strong>${(item.price * item.quantity).toFixed(2)}</strong>
+                        <strong>{currencyFormatters.usd.format(item.price * item.quantity)}</strong>
                       </div>
                     </div>
                   </article>

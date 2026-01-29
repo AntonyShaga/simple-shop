@@ -49,7 +49,7 @@ function ProductPage() {
     void navigate({ to: isEditMode ? ROUTES.cart : ROUTES.products });
   };
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <div role="status">Loading...</div>;
   if (!data) return <div>Not found</div>;
 
   return (

@@ -802,6 +802,7 @@ h2.no-flag::after {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 }
 
 .order-item-meta {
@@ -814,7 +815,7 @@ h2.no-flag::after {
 
 .order-item-price {
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     font-size: 16px;
 }
 
