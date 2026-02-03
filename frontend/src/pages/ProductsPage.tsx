@@ -33,7 +33,12 @@ function ProductsPage({ page }: Props) {
                 <article className="card" aria-label={`Pizza ${p.name}`}>
                   <Link className="card-link" to={ROUTES.product} params={{ id: p.pizza_type_id }}>
                     <h2 className="products-title no-flag">{p.name}</h2>
-                    <img className="products-image" src={`${API_URL}${p.image}`} alt={p.name} />
+                    <img
+                      className="products-image image blur"
+                      src={`${API_URL}${p.image}`}
+                      alt={p.name}
+                      onLoad={(e) => e.currentTarget.classList.add('loaded')}
+                    />
                   </Link>
                 </article>
               </li>

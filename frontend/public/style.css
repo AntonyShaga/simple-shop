@@ -129,6 +129,21 @@ h2.no-flag::after {
     border: 0;
 }
 
+.image.blur {
+    filter: blur(14px);
+    opacity: 0.6;
+    transform: scale(1.05);
+    transition: filter 300ms ease,
+    opacity 300ms ease,
+    transform 300ms ease;
+}
+
+.image.blur.loaded {
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1);
+}
+
 /*-----------//------------//HEADER//-----------//-----------*/
 .nav-cart {
     position: relative;
